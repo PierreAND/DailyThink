@@ -31,7 +31,7 @@ window.addEventListener("resize", changeWidth);
 
         <ul className="liste">
   <li className="items"><Link to="/">Accueil</Link></li>
-  <li className="items"><Link to="/post">Ecrire</Link></li>
+  <li className="items"><Link to="/profile">A Propos</Link></li>
   <li className="items"><Link to="/contact">Contact</Link></li>
   
  </ul>

@@ -1,11 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { applyMiddleware, combineReducers } from "redux";
-import articleReducer from "./articles/articleReducer";
-
+import {applyMiddleware, combineReducers} from "redux"
+import {configureStore} from "@reduxjs/toolkit"
+import sportReducer from "./articles/sportReducer"
 
 
 const reducer = combineReducers ({
-  articleReducer
+  sportReducer
 })
 
 const store = configureStore({
