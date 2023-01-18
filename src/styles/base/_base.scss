@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "KaBlam";
-  src: url("/public/fonts/QUARTZO\ ©\ PERSONAL\ USE\ ONLY.ttf");
+  src: url("/fonts/QUARTZO\ ©\ PERSONAL\ USE\ ONLY.ttf");
   font-display: swap;
 }
 
@@ -14,6 +14,7 @@ nav {
   width: 100%;
   height: 50px;
   z-index: 10;
+  background:black;
  
 }
 
@@ -196,7 +197,7 @@ font-size: 18px;
 
 .home {
   height: 100vh;
-  background: url(/public/images/citynight.jpg);
+  background: url(/images/citynight.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -215,7 +216,7 @@ font-size: 18px;
   animation-duration: 10s;
 }
 .home ul{
-  font-size: clamp(5px, 4vw, 15px);
+  font-size: clamp(10px, 7vw, 15px);
   text-transform: uppercase;
   color: #f1f1f1;
   font-weight: 100;
@@ -223,6 +224,13 @@ font-size: 18px;
   animation-name: moveInFromLeft;
   animation-duration: 10s;
   font-family: "KaBlam";
+
+  & a{ 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+  }
 }
 
 .floating-btn  {

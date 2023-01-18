@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 function Hero() {
   return (
@@ -6,14 +7,14 @@ function Hero() {
     
     <h1>DailyThink</h1>
     <ul>
-      Sport
-      Cinema
-      Musique
-      Actu
-      Philo
+      <Link to="/musique">Musique</Link>
+      <Link to="/cinema">Cinema</Link>
+      <Link to="/sport">Sport</Link>
+      <Link to="/actu">Actu</Link>
+      <Link to="/philo"> Philo</Link>
     </ul>
     <a href='#cards' className="floating-btn">
-      <img src="/public/images/chevron-down.svg" />
+      <img src="/images/chevron-down.svg" />
     </a>
   </section>
   )
