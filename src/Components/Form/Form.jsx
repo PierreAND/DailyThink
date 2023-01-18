@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import articleReducer from "../../redux/articles/articleReducer";
+import sportReducer from "../../redux/articles/sportReducer"
 
 function Form() {
   const [article, setArticle] = useState({
     title: "",
     body: "",
+    date: "",
   });
 
   const dispatch = useDispatch();
@@ -16,17 +17,18 @@ function Form() {
 
 
     dispatch({
-      type: "ADDARTICLE",
+      type: "ADDSPORT",
       payload: article
     })
 
 
     setArticle({
       title: "",
-      body: ""
+      body: "",
+      date: ""
     })
   };
-
+console.log(article)
   const handleChange = (e) => {
     if (e.target.classList.contains("inp-title")) {
       const newObjState = { ...article, title: e.target.value };
@@ -36,8 +38,12 @@ function Form() {
       const newObjState = { ...article, body: e.target.value };
       setArticle(newObjState);
     }
-  };
-console.log(article)
+    if (e.target.classList.contains("inp-date")) {
+      const newObjState = { ...article, date: e.target.value };
+      setArticle(newObjState);
+      }
+    }
+  
   return (
     <>
       <h1 className="title-form">Ecris ton article</h1>
@@ -49,7 +55,7 @@ console.log(article)
           onChange={handleChange}
           value={article.title}
           className="inp-title"
-          placeholder="Votre nom"
+          placeholder="Titre"
         />
         <label htmlFor="article">Article</label>
         <textarea
@@ -59,6 +65,12 @@ console.log(article)
           className="inp-body"
           placeholder="Votre article"
         ></textarea>
+        <label htmlFor="date">Date</label>
+        <input dateTime=""
+        onChange={handleChange}
+        value={article.date}
+        className="inp-date"
+        placeholder="Date du jour"></input>
         <button>Envoyez l'article</button>
       </form>
     </>

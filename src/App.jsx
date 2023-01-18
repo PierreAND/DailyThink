@@ -7,6 +7,7 @@ import Cinema from "./Containers/Cinema/Cinema";
 import Philo from "./Containers/Philo/Philo";
 import Actu from "./Containers/Actu/Actu";
 import {Routes, Route} from "react-router-dom";
+import Article from "./Containers/Articles/Article";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cinema" element={<Cinema/>} />
         <Route path="/philo" element={<Philo/>} />
         <Route path="/actu" element={<Actu/>} />
+        <Route path="/articles/:slug" element={<Article/>} />
       </Routes>
      
     </>
