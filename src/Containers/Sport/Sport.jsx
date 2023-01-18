@@ -16,12 +16,13 @@ function Sport() {
   return (
     <>
       
-      <h1 id="cards" className="home-title">Les Articles du Blog</h1>
+      <h1 id="cards" className="home-title">Les Articles Sports</h1>
       <div className="container-cards">
         {articles.map((item) => {
           return (
             <Card key={uuidv4()}>
               <h2>{item.title}</h2>
+              <p className='card-date'>{item.date}</p>
               <Link to={`/articles/${item.title.replace(/\s+/g, "-").trim()}`}
               state={item.body}
               >

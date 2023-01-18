@@ -191,7 +191,8 @@ font-size: 18px;
 }
 
 .article-content p {
-  font-size: 60px;
+  font-size:30px;
+  padding-left: 30px;
 }
 
 
@@ -292,3 +293,8 @@ a.floating-btn {
 .img-article {
   width: 50px;
 }
+
+.card-date {
+  text-decoration: underline;
+}
+
