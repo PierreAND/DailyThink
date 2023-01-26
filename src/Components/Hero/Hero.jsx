@@ -16,6 +16,7 @@ function Hero() {
     <a href='#cards' className="floating-btn">
       <img src="/images/chevron-down.svg" />
     </a>
+    <button className='btn-eggs'><Link to="/eggs">*</Link></button>
   </section>
   )
 }

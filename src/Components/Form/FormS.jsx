@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import sportReducer from "../../redux/articles/sportReducer"
 
-function Form() {
+function FormS() {
   const [article, setArticle] = useState({
     title: "",
     body: "",
@@ -46,7 +46,7 @@ console.log(article)
   
   return (
     <>
-      <h1 className="title-form">Ecris ton article</h1>
+      <h1 className="title-form">Sport</h1>
       <form onSubmit={handleForm} className="container-form">
         <label htmlFor="title">Nom</label>
         <input
@@ -77,4 +77,4 @@ console.log(article)
   );
 }
 
-export default Form;
+export default FormS;

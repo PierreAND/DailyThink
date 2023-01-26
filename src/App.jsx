@@ -6,6 +6,7 @@ import Sport from "./Containers/Sport/Sport";
 import Cinema from "./Containers/Cinema/Cinema";
 import Philo from "./Containers/Philo/Philo";
 import Actu from "./Containers/Actu/Actu";
+import Eggs from "./Containers/Eggs/Eggs";
 import {Routes, Route} from "react-router-dom";
 import Article from "./Containers/Articles/Article";
 
@@ -23,7 +24,12 @@ function App() {
         <Route path="/cinema" element={<Cinema/>} />
         <Route path="/philo" element={<Philo/>} />
         <Route path="/actu" element={<Actu/>} />
-        <Route path="/articles/:slug" element={<Article/>} />
+        <Route path="/sports/:slug" element={<Article/>} />
+        <Route path="/cinema/:slug" element={<Article/>} />
+        <Route path="/philos/:slug" element={<Article/>} />
+        <Route path="/actus/:slug" element={<Article/>} />
+        <Route path="/musiques/:slug" element={<Article/>} />
+        <Route path="/eggs" element={<Eggs />} />
       </Routes>
      
     </>
