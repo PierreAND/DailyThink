@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+
 
 
 @font-face {
   font-family: "KaBlam";
-  src: url("/fonts/QUARTZO\ ©\ PERSONAL\ USE\ ONLY.ttf");
-  font-display: swap;
+  src: url("/fonts/vintage.ttf");
+  
 }
+
 
 
 nav {
@@ -13,7 +14,7 @@ nav {
   top: 0;
   width: 100%;
   height: 50px;
-  z-index: 10;
+  z-index: 20;
   background:black;
  
 }
@@ -28,17 +29,23 @@ nav {
   justify-content: center;
   align-items: center;
   position: relative;
+ 
+ 
 }
 .liste a {
   color: white;
   font-family: "KaBlam";
+  text-decoration: none;
 
 }
+
 .items {
   margin: 0 15px;
   text-transform: uppercase;
   color: #f1f1f1;
   cursor: pointer;
+
+
 }
 
 .btn-burger {
@@ -51,7 +58,11 @@ nav {
   font-size: 18px;
   cursor: pointer;
   box-shadow: 0 0 0 0 #fff;
-  animation: pulse 1.3s infinite
+  animation: pulse 1.3s infinite;
+  width: 30px;
+  height: 30px;
+ 
+
 }
 
 @keyframes pulse {
@@ -74,19 +85,17 @@ nav {
     } 
     }
 
-.btn-burger {
-  width: 30px;
-  height: 30px;
-}
 
 @media screen and (max-width: 500px) {
     .liste {
        flex-direction: column;
        height: 200px;
+      
     }
     .items:nth-child(1){
       border-top: 1px solid #fff;
       margin-top: 50px;
+    
     }
     .items {
       height: 50px;
@@ -94,17 +103,20 @@ nav {
       border-bottom: 1px solid #fff;
       line-height: 50px;
       text-align: center;
+    
     }
     .btn-burger {
       display:block;
+    
     }
+
 };
   
 .card {
   max-width: 300px;
   min-width: 300px;
   padding: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(224, 192, 192, 0.2);
   margin: 10px;
   cursor: pointer;
   min-height: 200px;
@@ -113,6 +125,8 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 15px;
+  background-color: rgb(255, 209, 209);
+ 
 }
 
 .card h2 {
@@ -126,10 +140,11 @@ font-size: 18px;
 
 
 .home-title {
-  font-size: 60px;
+  font-size: 40px;
   margin: 100px 0 40px;
   text-align: center;
   font-family: "KaBlam";
+  color: white
 
 }
 
@@ -140,6 +155,7 @@ font-size: 18px;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto 0;
+  
 }
 
 
@@ -148,6 +164,7 @@ font-size: 18px;
   text-align: center;
   font-size: 55px;
   margin: 70px 0 0;
+  color:white
 }
 
 .container-form {
@@ -160,6 +177,7 @@ font-size: 18px;
 
 .container-form label {
   font-size: 20px;
+  color: white;
 
 }
 
@@ -182,28 +200,32 @@ font-size: 18px;
   border: 1px solid rgba(0,0,0,0.8);
   border-radius: 3px;
   cursor: pointer;
+  color: white;
 }
 
 .article-content {
   max-width: 700px;
   min-width: 300px;
   margin: 100px auto;
+  color: white
 }
 
 .article-content p {
   font-size:30px;
   padding-left: 30px;
+  color: white;
 }
 
 
 .home {
   height: 100vh;
-  background: url(/images/citynight.jpg);
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 0 50px;
   position: relative;
+  z-index: 10;
 }
 
 .home h1 {
@@ -214,7 +236,8 @@ font-size: 18px;
   color: #f1f1f1;
   font-weight: 900;
   animation-name: moveInFromLeft;
-  animation-duration: 10s;
+  animation-duration: 2s;
+  z-index: 10;
 }
 .home ul{
   font-size: clamp(10px, 7vw, 15px);
@@ -223,7 +246,8 @@ font-size: 18px;
   font-weight: 100;
   letter-spacing: -1px;
   animation-name: moveInFromLeft;
-  animation-duration: 10s;
+  animation-duration: 1.5s;
+  z-index: 10;
   font-family: "KaBlam";
 
   & a{ 
@@ -282,12 +306,20 @@ a.floating-btn {
     width: 20px;
     height: 20px;
   }
-}
+
+  .cadre {
+    width: 300px;
+  }
+
+  }
+
 
 @media screen and (max-width: 350px) {
   .home {
     padding: 0 10px;
   }
+
+  
 }
 
 .img-article {
@@ -305,4 +337,130 @@ a.floating-btn {
   background-color: #000;
   opacity: -50%;
   
+}
+
+
+.carousel {
+  animation: carousel 14s ease-out infinite;
+}
+
+
+
+.cadre {
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  max-width: 500px;
+  max-height:500px;
+  border-radius: 5px;
+  background: rgb(55,55,55);
+  color: white;
+  overflow: hidden;
+  
+
+}
+
+
+
+@keyframes carousel {
+  0%, 10% {
+      transform: translateX(0);
+  }
+  10%, 20% {
+      transform: translateY(-500px);
+  }
+  20%, 30% {
+      transform: translateY(-1000px);
+  }
+  30%, 40% {
+      transform: translateY(-1500px);
+  }
+  40%, 50% {
+      transform: translateY(-2000px);
+  }
+
+  50%, 60% {
+      transform: translateY(-2500px);
+  }
+  60%, 70% {
+      transform: translateY(-3000px);
+  }
+   70%, 80% {
+      transform: translateY(-3500px);
+  }
+
+  80%, 90% {
+      transform: translateY(-4000px)
+
+  }
+
+   90%, 100% {
+      transform: translateY(-4500px)
+  }
+   100% {
+      transform: translateY(-5000px)
+  }
+
+}
+
+.contact a:first-child {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  text-decoration: none;
+  font-family: "KaBlam";
+  font-size: 1.5rem;
+  z-index: 10;
+  color:whitesmoke;
+
+
+
+}
+
+.contact a:nth-child(2) {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  text-decoration: none;
+  font-family: "KaBlam";
+  font-size: 1.5rem;
+  z-index: 9;
+  color:whitesmoke;
+}
+
+.contact a:nth-child(3) {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  text-decoration: none;
+  font-family: "KaBlam";
+  font-size: 1.5rem;
+  z-index: 10;
+  color:whitesmoke;
+
+}
+
+.footer p {
+  display: flex ;
+  align-items: baseline;
+  justify-content: center;
+  background-color: white;
+  z-index: 10;
+  padding: 5%;
+}
+
+
+
+.about {
+position: absolute;
+top: 10%;
+color: white;
+font-family: "KaBlam";
+margin: auto 300px;
+padding: 50px;
+font-size: 2.5rem;
+
 }

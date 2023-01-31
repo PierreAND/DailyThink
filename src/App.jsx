@@ -7,6 +7,8 @@ import Cinema from "./Containers/Cinema/Cinema";
 import Philo from "./Containers/Philo/Philo";
 import Actu from "./Containers/Actu/Actu";
 import Eggs from "./Containers/Eggs/Eggs";
+import About from "./Containers/About/About";
+
 import {Routes, Route} from "react-router-dom";
 import Article from "./Containers/Articles/Article";
 
@@ -15,10 +17,11 @@ function App() {
   return (
     <>
       <NavBar />
-     
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} /> 
         <Route path="/musique" element={<Musique/>} />
         <Route path="/sport" element={<Sport/>} />
         <Route path="/cinema" element={<Cinema/>} />
