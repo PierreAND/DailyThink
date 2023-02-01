@@ -460,13 +460,14 @@ a.floating-btn {
 
 
 
-.about {
+.about p {
 position: absolute;
 top: 10%;
 color: white;
 font-family: "KaBlam";
-margin: auto 300px;
+// margin: auto 300px;
 padding: 50px;
-font-size: 2.5rem;
+font-size: clamp(10px, 7vw, 30px);
+z-index: 10;
 
 }
