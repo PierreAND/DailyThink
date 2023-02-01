@@ -113,21 +113,27 @@ nav {
 };
   
 .card {
-  max-width: 300px;
-  min-width: 300px;
-  padding: 10px;
-  box-shadow: 0 5px 15px rgba(224, 192, 192, 0.2);
-  margin: 10px;
-  cursor: pointer;
-  min-height: 200px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 15px;
-  background-color: rgb(255, 209, 209);
- 
+  max-width: 190px;
+  min-width: 120px;
+  padding: 0.5rem;
+  background: rgba(198, 198, 198, 0.34);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.440);
+  border-left: 2px  rgba(255, 255, 255, 0.545) outset;
+  box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+  transform: skewX(10deg);
+  transition: .4s;
+  overflow: hidden;
+  color: white;
+  margin: 15px;
 }
+
+.card:hover {
+  height: 200px;
+  transform: skew(0deg);
+}
+
 
 .card h2 {
   font-size: 25px;
@@ -352,7 +358,7 @@ a.floating-btn {
   margin: 0 auto;
   max-width: 500px;
   max-height:500px;
-  border-radius: 5px;
+  border-radius: 400px;
   background: rgb(55,55,55);
   color: white;
   overflow: hidden;

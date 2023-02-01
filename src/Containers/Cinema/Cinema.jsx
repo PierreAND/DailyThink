@@ -21,6 +21,11 @@ function Cinema() {
         {articles.map((item) => {
           return (
             <Card key={uuidv4()}>
+              <div className="align">
+                <span className="red"></span>
+                <span className="yellow"></span>
+                <span className="green"></span>
+              </div>
               <h2 >{item.title}</h2>
               <p className='card-date'>{item.date}</p>
               <Link to={`/cinema/${item.title.replace(/\s+/g, "-").trim()}`}
