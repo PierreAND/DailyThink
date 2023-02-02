@@ -33,6 +33,9 @@ return (
     <a href='#foot' className="floating-btn">
       <img src="/images/chevron-down.svg" />
     </a>
+    <div className="btn-eggs">
+        <a href="btn"><Link to="/eggs">/</Link></a>
+    </div>
     /
   </section>
   <Particles
