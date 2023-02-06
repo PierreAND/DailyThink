@@ -1,30 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from "../../Components/Card/Card";
-
-import { useSelector, useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+import APIManager from '../../services/api';
 import { Link } from "react-router-dom";
 
 function Actu() {
 
-  const { articles } = useSelector((state) => ({
-    ...state.actuReducer 
-  }));
+  const [actus, setActus] = useState ([])
+
+  useEffect (()=>{
+    const getActu = async () => {
+      await APIManager.getAllActu().then((data) => setActus(data));
+    }
+    getActu().catch(console.err)
+  }, [])
+ 
 
 
 
   return (
     <>
       
-      <h1 id="cards"  className="home-title">Les Articles Actus</h1>
+      <h1 id="cards"  className="home-title">Les Articles d'Actualité</h1>
       <div className="container-cards">
-        {articles.map((item) => {
+        {actus.map((actu) => {
           return (
-            <Card key={uuidv4()}>
-              <h2 >{item.title}</h2>
-              <p className='card-date'>{item.date}</p>
-              <Link to={`/actus/${item.title.replace(/\s+/g, "-").trim()}`}
-              state={item.body}
+            <Card key={"article" + actu.id}>
+              <h2 >{actu.title}</h2>
+              <p className='card-date'>{actu.date}</p>
+              <Link to={`/actu/${actu.title.replace(/\s+/g, "-").trim()}`}
+              state={actu.content}
               >
                 Lire l'article
               </Link>

@@ -1,30 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from "../../Components/Card/Card";
-
-import { useSelector, useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+import APIManager from '../../services/api';
 import { Link } from "react-router-dom";
 
 function Philo() {
 
-  const { articles } = useSelector((state) => ({
-    ...state.philoReducer 
-  }));
+  const [philos, setPhilos] = useState ([])
+
+  useEffect (()=>{
+    const getPhilo = async () => {
+      await APIManager.getAllPhilo().then((data) => setPhilos(data));
+    }
+    getPhilo().catch(console.err)
+  }, [])
+ 
 
 
 
   return (
     <>
       
-      <h1 id="cards"  className="home-title">Les Articles Philos</h1>
+      <h1 id="cards"  className="home-title">Les Articles Philo</h1>
       <div className="container-cards">
-        {articles.map((item) => {
+        {philos.map((philo) => {
           return (
-            <Card key={uuidv4()}>
-              <h2 >{item.title}</h2>
-              <p className='card-date'>{item.date}</p>
-              <Link to={`/philos/${item.title.replace(/\s+/g, "-").trim()}`}
-              state={item.body}
+            <Card key={"article" + philo.id}>
+              <h2 >{philo.title}</h2>
+              <p className='card-date'>{philo.date}</p>
+              <Link to={`/philo/${philo.title.replace(/\s+/g, "-").trim()}`}
+              state={philo.content}
               >
                 Lire l'article
               </Link>

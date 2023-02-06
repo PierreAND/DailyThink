@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from "../../Components/Card/Card";
-
-import { useSelector, useDispatch } from "react-redux";
+import APIManager from '../../services/api';
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 
 function Cinema() {
 
-  const { articles } = useSelector((state) => ({
-    ...state.cinemaReducer 
-  }));
+  const [cinemas, setCinemas] = useState ([])
+
+  useEffect (()=>{
+    const getCinema = async () => {
+      await APIManager.getAllCinema().then((data) => setCinemas(data));
+    }
+    getCinema().catch(console.err)
+  }, [])
+ 
 
 
 
@@ -18,18 +23,13 @@ function Cinema() {
       
       <h1 id="cards"  className="home-title">Les Articles Cinema</h1>
       <div className="container-cards">
-        {articles.map((item) => {
+        {cinemas.map((cinema) => {
           return (
-            <Card key={uuidv4()}>
-              <div className="align">
-                <span className="red"></span>
-                <span className="yellow"></span>
-                <span className="green"></span>
-              </div>
-              <h2 >{item.title}</h2>
-              <p className='card-date'>{item.date}</p>
-              <Link to={`/cinema/${item.title.replace(/\s+/g, "-").trim()}`}
-              state={item.body}
+            <Card key={"article" + cinema.id}>
+              <h2 >{cinema.title}</h2>
+              <p className='card-date'>{cinema.date}</p>
+              <Link to={`/cinema/${cinema.title.replace(/\s+/g, "-").trim()}`}
+              state={cinema.content}
               >
                 Lire l'article
               </Link>
