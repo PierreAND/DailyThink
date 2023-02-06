@@ -1,30 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from "../../Components/Card/Card";
-
-import { useSelector, useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+import APIManager from '../../services/api';
 import { Link } from "react-router-dom";
 
 function Musique() {
 
-  const { articles } = useSelector((state) => ({
-    ...state.musiqueReducer 
-  }));
+  const [musiques, setMusiques] = useState ([])
+
+  useEffect (()=>{
+    const getMusique = async () => {
+      await APIManager.getAllMusique().then((data) => setMusiques(data));
+    }
+    getMusique().catch(console.err)
+  }, [])
+ 
 
 
 
   return (
     <>
       
-      <h1 id="cards"  className="home-title">Les Articles Musiques</h1>
+      <h1 id="cards"  className="home-title">Les Articles Musique</h1>
       <div className="container-cards">
-        {articles.map((item) => {
+        {musiques.map((musique) => {
           return (
-            <Card key={uuidv4()}>
-              <h2 >{item.title}</h2>
-              <p className='card-date'>{item.date}</p>
-              <Link to={`/musiques/${item.title.replace(/\s+/g, "-").trim()}`}
-              state={item.body}
+            <Card key={"article" + musique.id}>
+              <h2 >{musique.title}</h2>
+              <p className='card-date'>{musique.date}</p>
+              <Link to={`/musique/${musique.title.replace(/\s+/g, "-").trim()}`}
+              state={musique.content}
               >
                 Lire l'article
               </Link>

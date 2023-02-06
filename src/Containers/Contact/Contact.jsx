@@ -4,6 +4,7 @@ import Particles from 'react-particles';
 import {loadFull} from 'tsparticles'
 
 
+
 const  Contact = () => {
    const particlesInit = useCallback(async engine => {
         console.log(engine);
@@ -13,10 +14,11 @@ const  Contact = () => {
 
     const particlesLoaded = useCallback(async container => {
         await console.log(container);
-    }, []);
+    }, [])
 
     return (
       <>
+    
       <div className="contact">
       <a href="mailto: andrieu.ps@gmail.com">andrieu.ps@gmail.com</a>
       <a href="https://github.com/PierreAND" target="_blank">@GITHUB</a>

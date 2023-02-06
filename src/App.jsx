@@ -27,11 +27,11 @@ function App() {
         <Route path="/cinema" element={<Cinema/>} />
         <Route path="/philo" element={<Philo/>} />
         <Route path="/actu" element={<Actu/>} />
-        <Route path="/sports/:slug" element={<Article/>} />
+        <Route path="/sport/:slug" element={<Article/>} />
         <Route path="/cinema/:slug" element={<Article/>} />
-        <Route path="/philos/:slug" element={<Article/>} />
-        <Route path="/actus/:slug" element={<Article/>} />
-        <Route path="/musiques/:slug" element={<Article/>} />
+        <Route path="/philo/:slug" element={<Article/>} />
+        <Route path="/actu/:slug" element={<Article/>} />
+        <Route path="/musique/:slug" element={<Article/>} />
         <Route path="/eggs" element={<Eggs />} />
       </Routes>
      

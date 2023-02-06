@@ -1,80 +1,74 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import sportReducer from "../../redux/articles/sportReducer"
+import APIManager from "../../services/api";
+import React, { useEffect, useState } from 'react';
 
 function FormS() {
-  const [article, setArticle] = useState({
-    title: "",
-    body: "",
-    date: "",
-  });
-
-  const dispatch = useDispatch();
-
-  const handleForm = (e) => {
-    e.preventDefault();
+  const [ title , setTitle] = useState("")
+  const [content, setContent] = useState("")
+  const [date, setDate] = useState("")
 
 
-    dispatch({
-      type: "ADDSPORT",
-      payload: article
-    })
 
-
-    setArticle({
-      title: "",
-      body: "",
-      date: ""
-    })
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const data = {
+    title: title,
+    content: content,
+    date: date,
   };
-console.log(article)
-  const handleChange = (e) => {
-    if (e.target.classList.contains("inp-title")) {
-      const newObjState = { ...article, title: e.target.value };
-      setArticle(newObjState);
-    }
-    if (e.target.classList.contains("inp-body")) {
-      const newObjState = { ...article, body: e.target.value };
-      setArticle(newObjState);
-    }
-    if (e.target.classList.contains("inp-date")) {
-      const newObjState = { ...article, date: e.target.value };
-      setArticle(newObjState);
-      }
-    }
-  
+
+  try {
+    const response = await APIManager.newSport(data)
+     console.log(response.data)
+     }catch (err) {
+      console.error(err)
+
+  }
+}
   return (
-    <>
-      <h1 className="title-form">Sport</h1>
-      <form onSubmit={handleForm} className="container-form">
-        <label htmlFor="title">Nom</label>
-        <input
-          type="text"
-          id="title"
-          onChange={handleChange}
-          value={article.title}
-          className="inp-title"
-          placeholder="Titre"
+   <>
+   <h1 className="title-form">Sport</h1>
+    <form onSubmit={handleSubmit} className="container-form">
+      <label htmlFor="title">Title </label>
+      <input
+        onChange={(e) => setTitle(e.target.value)}
+        value={title}
+        type="text"
+        id="title"
+        placeholder="Titre"
         />
-        <label htmlFor="article">Article</label>
-        <textarea
-          id="article"
-          onChange={handleChange}
-          value={article.body}
-          className="inp-body"
-          placeholder="Votre article"
-        ></textarea>
-        <label htmlFor="date">Date</label>
-        <input dateTime=""
-        onChange={handleChange}
-        value={article.date}
-        className="inp-date"
-        placeholder="Date du jour"></input>
-        <button>Envoyez l'article</button>
-      </form>
-    </>
-  );
+       
+       <label htmlFor="content">Content </label>
+      <textarea
+        onChange={(e) => setContent(e.target.value)}
+        value={content}
+        id="content"
+        placeholder="Texte">
+
+        </textarea>
+        
+       
+      <label htmlFor="password">Date</label>
+      
+      <input
+        onChange={(e) => setDate(e.target.value)}
+        value={date}
+        type="text"
+        id="date"
+        placeholder="date"
+        />
+ 
+       
+    
+      <button>Envoyer</button>
+    </form>
+   
+   
+   
+   
+   </>
+  )
 }
 
-export default FormS;
+export default FormS
+
+

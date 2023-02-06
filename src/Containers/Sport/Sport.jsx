@@ -1,30 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from "../../Components/Card/Card";
-
-import { useSelector, useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+import APIManager from '../../services/api';
 import { Link } from "react-router-dom";
 
 function Sport() {
 
-  const { articles } = useSelector((state) => ({
-    ...state.sportReducer 
-  }));
+  const [sports, setSports] = useState ([])
+
+  useEffect (()=>{
+    const getSport = async () => {
+      await APIManager.getAllSport().then((data) => setSports(data));
+    }
+    getSport().catch(console.err)
+  }, [])
+ 
 
 
 
   return (
     <>
       
-      <h1 id="cards"  className="home-title">Les Articles Sports</h1>
+      <h1 id="cards"  className="home-title">Les Articles Sport</h1>
       <div className="container-cards">
-        {articles.map((item) => {
+        {sports.map((sport) => {
           return (
-            <Card key={uuidv4()}>
-              <h2 >{item.title}</h2>
-              <p className='card-date'>{item.date}</p>
-              <Link to={`/sports/${item.title.replace(/\s+/g, "-").trim()}`}
-              state={item.body}
+            <Card key={"article" + sport.id}>
+              <h2 >{sport.title}</h2>
+              <p className='card-date'>{sport.date}</p>
+              <Link to={`/sport/${sport.title.replace(/\s+/g, "-").trim()}`}
+              state={sport.content}
               >
                 Lire l'article
               </Link>
