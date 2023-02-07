@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-const APIRequest = axios.create ({ baseURL: "http://localhost:3000" })
+const APIRequest = axios.create ({ baseURL: "https://dailythink.fly.dev/" })
 
 
 APIRequest.interceptors.request.use(({headers, ...config}) => ({
