@@ -11,9 +11,11 @@ specifiers:
   react-particles: ^2.8.0
   react-redux: ^8.0.5
   react-router-dom: ^6.4.3
+  react-service-worker: ^0.1.1
   redux: ^4.2.0
   redux-thunk: ^2.4.2
   sass: ^1.56.0
+  serv: ^0.2.4
   tsparticles: ^2.8.0
   uuid: ^9.0.0
   vite: ^3.2.3
@@ -26,9 +28,11 @@ dependencies:
   react-particles: 2.8.0_react@18.2.0
   react-redux: 8.0.5_ux5ypa4vfeu6lrs5gncpqp4a4u
   react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
+  react-service-worker: 0.1.1
   redux: 4.2.0
   redux-thunk: 2.4.2_redux@4.2.0
   sass: 1.56.0
+  serv: 0.2.4
   tsparticles: 2.8.0
   uuid: 9.0.0
 
@@ -534,6 +538,15 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
+  /connect/1.9.2:
+    resolution: {integrity: sha512-6Z9RPjQOHjaI47gK385djHVv7SEkRm1Y9AAvBhiI7gSXpO5sFktTkAD+dkbcaiEo2xaNlS1KIJU3XRxqbPLx6w==}
+    deprecated: connect 1.x series is deprecated
+    dependencies:
+      formidable: 1.0.17
+      mime: 1.2.4
+      qs: 0.4.2
+    dev: false
+
   /convert-source-map/1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
     dev: true
@@ -782,6 +795,17 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  /express/2.5.11:
+    resolution: {integrity: sha512-gc3jJ0P3Bh1Zjkxe0ICSNmjhDvYWKiXfQIdDWuRPr8S4IZAZexzJHjrzNz56LsRKHTL0OiXQq602GfwZjZ8xPQ==}
+    deprecated: express 2.x series is deprecated
+    hasBin: true
+    dependencies:
+      connect: 1.9.2
+      mime: 1.2.4
+      mkdirp: 0.3.0
+      qs: 0.4.2
+    dev: false
+
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: false
@@ -809,6 +833,12 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+    dev: false
+
+  /formidable/1.0.17:
+    resolution: {integrity: sha512-95MFT5qipMvUiesmuvGP1BI4hh5XWCzyTapiNJ/k8JBQda7rPy7UCWYItz2uZEdTgGNy1eInjzlL9Wx1O9fedg==}
+    engines: {node: '>=0.8.0'}
+    deprecated: 'Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau'
     dev: false
 
   /fsevents/2.3.2:
@@ -904,6 +934,10 @@ packages:
     hasBin: true
     dev: true
 
+  /keypress/0.2.1:
+    resolution: {integrity: sha512-HjorDJFNhnM4SicvaUXac0X77NiskggxJdesG72+O5zBKpSqKFCrqmndKVqpu3pFqkla0St6uGk8Ju0sCurrmg==}
+    dev: false
+
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -930,6 +964,15 @@ packages:
       mime-db: 1.52.0
     dev: false
 
+  /mime/1.2.4:
+    resolution: {integrity: sha512-u4y8WFj7SnfbHxyzCMSV2nL/GKbfZ+lidPf1V4/XUKCJ49N6ttQWp/xnqpbMQEx3naBSt93i2qtPLFj/mjPDaA==}
+    dev: false
+
+  /mkdirp/0.3.0:
+    resolution: {integrity: sha512-OHsdUcVAQ6pOtg5JYWpCBo9W/GySVuwvP9hueRMW7UqshC0tbfzLv8wjySTPm3tfUZ/21CE9E1pJagOA91Pxew==}
+    deprecated: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+    dev: false
+
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
@@ -947,6 +990,17 @@ packages:
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
+
+  /open/0.0.5:
+    resolution: {integrity: sha512-+X/dJYLapVO1VbC620DhtNZK9U4/kQVaTQp/Gh7cb6UTLYfGZzzU2ZXkWrOA/wBrf4UqAFwtLqXYTxe4tSnWQQ==}
+    engines: {node: '>= 0.6.0'}
+    dev: false
+
+  /optimist/0.3.7:
+    resolution: {integrity: sha512-TCx0dXQzVtSCg2OgY/bO9hjM9cV4XYx09TVK+s3+FhkjT6LovsLe+pPMzpWf+6yXK/hUizs2gUoTw3jHM0VaTQ==}
+    dependencies:
+      wordwrap: 0.0.3
+    dev: false
 
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
@@ -971,6 +1025,10 @@ packages:
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
+
+  /qs/0.4.2:
+    resolution: {integrity: sha512-VAtfWeUtlBOnGiWFok2vOIMmwumiLmpqXDcXQcAEIQmLYgDbjrkHrcFBfth+YVDeRsz7jX44dhJr7IBJR0t/FQ==}
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:
@@ -1064,6 +1122,10 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-service-worker/0.1.1:
+    resolution: {integrity: sha512-NNv1QfF7lpH6ir/J3TrRTcLqP/veE+qRnCyvnZujo2lVCSpszYZRigceNhic+x9FwsBGsvkGrgZiXiq4C+VbxA==}
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -1135,6 +1197,16 @@ packages:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
     dev: true
+
+  /serv/0.2.4:
+    resolution: {integrity: sha512-y/OW/SRoWEV5aRqVbkgyIHqAUsp0slZdGmWpwkqlQLHDOEkXtFTHw+PRLeKQK3KBIF/uuHP8qj9VsN1+shJ7tw==}
+    hasBin: true
+    dependencies:
+      express: 2.5.11
+      keypress: 0.2.1
+      open: 0.0.5
+      optimist: 0.3.7
+    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
@@ -1515,3 +1587,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /wordwrap/0.0.3:
+    resolution: {integrity: sha512-1tMA907+V4QmxV7dbRvb4/8MaRALK6q9Abid3ndMYnbyo8piisCmeONVqVSXqQA3KaP4SLt5b7ud6E2sqP8TFw==}
+    engines: {node: '>=0.4.0'}
+    dev: false
