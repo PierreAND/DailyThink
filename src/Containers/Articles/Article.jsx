@@ -7,7 +7,7 @@ function Article() {
 
   return (
     <div className="article-content">
-      <h1>{location.pathname.replace(/\-/g, " ")}</h1>
+    
     <p>{location.state}</p>
     </div>
   );
