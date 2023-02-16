@@ -8,6 +8,8 @@ export default defineConfig({
     react(),
     VitePWA({ 
       manifest: {
+        name: "DailyThink",
+        short_name: "DailyThink",
         icons: [
             {
               "src": "/icons/maskable_icon.png",
