@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
 import React from 'react'
 import { useState, useEffect } from 'react'
+import {GiHamburgerMenu} from "react-icons/gi"
 
 function Navbar() {
 const [toggleMenu, setToggleMenu] = useState(false);
@@ -36,7 +37,7 @@ window.addEventListener("resize", changeWidth);
   
  </ul>
    )}
- <button onClick={toggleNav} className="btn-burger">☰</button>
+ <button onClick={toggleNav} className="btn-burger"><GiHamburgerMenu/></button>
  </nav>
  
   )
